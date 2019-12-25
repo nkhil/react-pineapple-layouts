@@ -4,6 +4,7 @@ import GlobalStyle from './resets/GlobalStyles';
 
 import Home from './components/Home';
 import StyledLogin from './components/Login';
+import AllPosts from './components/AllPosts';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <>
           <Route exact path='/' component={Home} />
           <Route exact path='/login' component={StyledLogin} />
+          <Route exact path='/posts' component={AllPosts} />
         </>
       </Router>
     </>

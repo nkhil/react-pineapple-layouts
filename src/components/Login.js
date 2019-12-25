@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components';
-import logo from '../images/logo.png';
+import StyledLogo from './Logo';
 
 function Login({ className }) {
 
@@ -25,7 +25,7 @@ function Login({ className }) {
       </Helmet>
       <div className={className}>
         <div className='box'>
-        <img src={logo} className="logo" alt="pineapple" />
+        <StyledLogo width='150px' />
           <h1>Log in</h1>
           <form onSubmit={handleLogin}>
             
@@ -65,6 +65,7 @@ const StyledLogin = styled(Login)`
   h1 {
     font-weight: bold;
     font-size: 1.5rem;
+    margin-top: 30px;
   }
 
   .box {
@@ -74,12 +75,6 @@ const StyledLogin = styled(Login)`
     background-color: #eee;
     border-radius: 5px;
     padding: 20px;
-
-    .logo {
-      width: 150px;
-      height: auto;
-      margin-bottom: 30px;
-    }
 
     form {
       display: flex;

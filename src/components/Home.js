@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 function Home() {
   return (
     <>
-      <h1>Home</h1>
-      <Link to='/login'>Click here to login</Link>
+      <p><Link to='/login'>Click here to login</Link></p>
+      <p><Link to='/posts'>Click here to see all posts</Link></p>
     </>
   );
 }
