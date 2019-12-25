@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet'
 import { WIDTH } from '../config/width';
 
@@ -7,9 +8,17 @@ import styled from 'styled-components';
 import StyledButton from './Button';
 import data from '../mock-data/posts';
 import Post from './Post';
+import PostView from './PostView';
 
-function AllPosts({ className }) {
+function AllPosts({ className, setData }) {
   const TITLE = 'Pineapple';
+
+  const [postData, setPostData] = useState([]);
+
+  useEffect(() => {
+    setPostData(data);
+    setData(data);
+  }, [postData, setData])
 
   return (
     <div className={className}>
@@ -26,7 +35,11 @@ function AllPosts({ className }) {
           />
           </div>
           {data.map(post => (
-            <Post data={post} />
+            <li key={post.id}>
+              <Link to={`/posts/${post.id}`}>
+                <Post data={post} />
+              </Link>
+            </li>
           ))}
       </div>
     </div>
@@ -34,6 +47,14 @@ function AllPosts({ className }) {
 }
 
 const StyledAllPosts = styled(AllPosts)`
+
+  a {
+      text-decoration: none;
+    }
+
+  li {
+    list-style-type: none;
+  }
   .main-container {
     
     max-width: ${WIDTH.MAIN_CONTAINER};

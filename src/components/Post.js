@@ -6,10 +6,13 @@ function Post({ className, data }) {
   const { title, date, body } = data;
 
   const formatBody = (body) => body.split(' ').slice(0, 50).join(' ') + '...';
-
+  
   return (
-    <div className={className}>
+    <div 
+      className={className}
+    >
       <h2>{title}</h2>
+      <p>{date}</p>
       <p>{formatBody(body)}</p>
     </div>
   )
