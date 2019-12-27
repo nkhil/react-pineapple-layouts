@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Nav from './Nav';
 import { WIDTH } from '../config/width';
 import mockData from '../mock-data/posts';
+import formatDate from '../utils/dateFormatter';
 
 function PostView({ className, match, data }) {
   console.log("TCL: PostView -> data", data)
@@ -22,7 +23,7 @@ function PostView({ className, match, data }) {
       <Nav />
       <div className={className}>
       <h1>{title}</h1>
-      <p>{date}</p>
+      <p>{formatDate(date)}</p>
       <p>
         {body}
       </p>

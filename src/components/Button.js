@@ -8,7 +8,7 @@ function Button({ history, className, text, link }) {
 
   const handleClick = () => {
     console.log('CLICKED');
-    history.push('/');
+    history.push('/create');
   }
   return (
     <IconContext.Provider value={{ size: '1.5em' }}>

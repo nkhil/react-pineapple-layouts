@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import formatDate from '../utils/dateFormatter';
 
 function Post({ className, data }) {
 
@@ -12,7 +13,7 @@ function Post({ className, data }) {
       className={className}
     >
       <h2>{title}</h2>
-      <p>{date}</p>
+      <p>{formatDate(date)}</p>
       <p>{formatBody(body)}</p>
     </div>
   )

@@ -1,24 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet';
 import { WIDTH } from '../config/width';
 
 import StyledNav from './Nav';
 import styled from 'styled-components';
 import StyledButton from './Button';
-import data from '../mock-data/posts';
+// import data from '../mock-data/posts';
 import Post from './Post';
 import PostView from './PostView';
 
-function AllPosts({ className, setData }) {
+function AllPosts({ className, data }) {
   const TITLE = 'Pineapple';
-
-  const [postData, setPostData] = useState([]);
-
-  useEffect(() => {
-    setPostData(data);
-    setData(data);
-  }, [postData, setData])
 
   return (
     <div className={className}>
@@ -30,7 +23,7 @@ function AllPosts({ className, setData }) {
         <div className='create-button'>
           <StyledButton 
             text={`Create`}
-            link='/'
+            link='/create'
             external={false}
           />
           </div>
